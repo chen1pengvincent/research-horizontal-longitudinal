@@ -1,0 +1,4 @@
+interface:
+  display_name: "横纵深度研究"
+  short_description: "沿时间轴与竞争切面完成可追溯、可核验、经对抗审查的深度研究报告"
+  default_prompt: "使用 $research-horizontal-longitudinal 调研我指定的研究对象，并给出有来源、经对抗审查的横纵分析报告。"
