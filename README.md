@@ -35,6 +35,8 @@
 - 技术与概念：MCP、RAG、Agent 框架
 - 人物：行业关键人物的职业轨迹及同期比较
 
+上表列举的是适合作为研究对象的示例（产品/公司/技术/人物），不是受支持的宿主列表；本 Skill 的运行依赖是支持 Agent Skills 标准的 Agent。
+
 ## 仓库结构
 
 ```text
@@ -50,16 +52,20 @@ README 位于仓库根目录，用于公开展示；可安装 Skill 单独位于
 
 ## 安装
 
+该 Skill 遵循 Agent Skills 开放标准（SKILL.md + YAML frontmatter）。任何支持该标准的 Agent 都可以使用：把内层 `research-horizontal-longitudinal` 目录（即包含 `SKILL.md` 的那一层，而不是仓库根目录）复制到该 Agent 的 skills 目录即可。
+
 ### 方法一：克隆后复制
 
 ```bash
 git clone https://github.com/chen1pengvincent/research-horizontal-longitudinal.git
 cp -R research-horizontal-longitudinal/research-horizontal-longitudinal ~/.codex/skills/
+cp -R research-horizontal-longitudinal/research-horizontal-longitudinal ~/.claude/skills/
+cp -R research-horizontal-longitudinal/research-horizontal-longitudinal ~/.agents/skills/
 ```
 
 ### 方法二：手动下载
 
-下载仓库 ZIP，解压后把内层 `research-horizontal-longitudinal` 目录复制到 `~/.codex/skills/`。
+下载仓库 ZIP，解压后把内层 `research-horizontal-longitudinal` 目录复制到目标 Agent 的 skills 目录，例如 `~/.codex/skills/`、`~/.claude/skills/` 或 `~/.agents/skills/`。
 
 安装后的关键路径应为：
 
@@ -67,7 +73,7 @@ cp -R research-horizontal-longitudinal/research-horizontal-longitudinal ~/.codex
 ~/.codex/skills/research-horizontal-longitudinal/SKILL.md
 ```
 
-若 Codex 尚未显示该 Skill，请在新任务中重新检查可用 Skill 列表。文件存在只证明安装产物已经落地，不自动证明当前运行实例已完成发现。
+若宿主 Agent 尚未显示该 Skill，请在新任务中重新检查可用 Skill 列表。文件存在只证明安装产物已经落地，不自动证明当前运行实例已完成发现。
 
 ## 使用方法
 
@@ -133,6 +139,8 @@ cp -R research-horizontal-longitudinal/research-horizontal-longitudinal ~/.codex
 
 提交衍生版本时，请保留“来源：数字生命卡兹克”的署名说明，并清楚区分原始方法与后续工程化改动。
 
-## 授权状态
+## 许可
 
-本仓库当前未附加开源许可证。公开可见不等于自动授予复制、修改或再分发权；使用和衍生时还应尊重原始内容来源及其适用授权条件。
+本仓库以 [MIT License](LICENSE) 发布。
+
+核心分析框架与原始提示词版权归原作者 **数字生命卡兹克**，已获授权随本仓库以 MIT 发布。
